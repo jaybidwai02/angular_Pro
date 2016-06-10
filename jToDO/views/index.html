@@ -1,0 +1,6 @@
+<form action="" ng-submit="addTask()">
+		<input type="text" ng-model="todoTask" placeholder="Enter ToDo Task" ng-disabled="inserting">
+	</form>
+	<ul ng-show="showTask">
+		<li ng-repeat="task in todo">{{ task.title }}</li>
+	</ul>

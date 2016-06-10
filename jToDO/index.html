@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ToDo</title>
+</head>
+<body ng-app="todo">
+
+<ng-view>
+
+</ng-view>
+
+
+
+<!--<script type="text/ng-template" id="todo_index.html">
+	<form action="" ng-submit="addTask()">
+		<input type="text" ng-model="todoTask" placeholder="Enter ToDo Task" ng-disabled="inserting">
+	</form>
+	<ul>
+		<li ng-repeat="task in todo">{{ task.title }}</li>
+	</ul>
+</script>-->
+
+<script src="js/lib/angular.min.js" type="text/javascript"></script>
+<script src="js/lib/angular-route.js" type="text/javascript"></script>
+<script src="js/app.js" type="text/javascript"></script>
+<script src="js/services/todoStorage.js" type="text/javascript"></script>
+<script src="js/controllers/todoCtr.js" type="text/javascript"></script>
+</body>
+</html>
