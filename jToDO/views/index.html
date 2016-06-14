@@ -1,6 +1,20 @@
 <form action="" ng-submit="addTask()">
 		<input type="text" ng-model="todoTask" placeholder="Enter ToDo Task" ng-disabled="inserting">
 	</form>
+	<input type="checkbox" name="" ng-model="markAllTask" ng-change="markAll(markAllTask)"><label for="">MarkAll</label>
 	<ul ng-show="showTask">
-		<li ng-repeat="task in todo">{{ task.title }}</li>
+		
+		<li ng-repeat="task in todo | filter: taskFilter">
+			<div>
+				<input type="checkbox" name="" class="custChk" ng-model="task.completed" ng-change="isComplete(task)">
+				<label for="">{{ task.title }}</label>
+				<button class="remove" ng-click="deleteTask(task)">X</button>
+			</div>
+		</li>
 	</ul>
+	<ng-pluralize count="taskCount" when="{'0':'No item left','one':'1 item left','other':'{{taskCount}} items left'}" offset=""></ng-pluralize>
+
+	<a href="#/">All</a>&nbsp;
+	<a href="#/active">Active</a>&nbsp;
+	<a href="#/completed">Completed</a>&nbsp;
+	<a href="javascript:;" ng-click="clearCompletedTasks()">Clear Completed Task</a>

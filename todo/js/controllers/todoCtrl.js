@@ -105,6 +105,7 @@ angular.module('todomvc')
 			if (angular.isDefined(completed)) {
 				todo.completed = completed;
 			}
+			//console.log(todo);
 			store.put(todo, todos.indexOf(todo))
 				.then(function success() {}, function error() {
 					todo.completed = !todo.completed;
@@ -122,4 +123,6 @@ angular.module('todomvc')
 				}
 			});
 		};
+
+		
 	});

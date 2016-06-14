@@ -1,8 +1,12 @@
 var app = angular.module('todo',['ngRoute']);
 
-app.config(['$routeProvider',function($routeProvider){
-	$routeProvider.when('/',{
+var routeConfigSettings = {
 		templateUrl:'views/index.html',
 		controller:'todoCtr'
-	})
+	};
+app.config(['$routeProvider',function($routeProvider){
+	$routeProvider
+	.when('/',routeConfigSettings)
+	.when('/:status',routeConfigSettings)
+	.otherwise({redirectTo:'/'})
 }])
