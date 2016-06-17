@@ -1,0 +1,13 @@
+{
+	"manifest_version":2,
+	"name":"angularApp",
+	"version":"1",
+	"description":"my first ext",
+	"background":{
+		"scripts":["js/angular.min.js"]
+	},
+	"content_security_policy": "script-src 'self'; object-src 'self'",
+	"chrome_url_overrides" : {
+		"newtab": "home.html"
+		}
+}
