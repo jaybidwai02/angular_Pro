@@ -9,9 +9,23 @@
 <div class="container" ng-controller="HomeController">
 	<p>{{ data.time | date:'hh:mm:ss'}}</p>
 	<p>{{ data.time | date:'EEEE, MMMM yyyy'}}</p>
+
+	<div id="forecast">
+		<ul class="row list-unstyled">
+		<li ng-repeat="day in weather.forecast.forecastday" class="col-md-3">
+		<div ng-class="{today: $index == 0}">
+		<img class="{{ day.icon }}" ng-src="{{ day.icon_url }}" />
+		<h3>{{ day.high.celsius }}</h3>
+		<h4 ng-if="$index == 0">Now</h4>
+		<h4 ng-if="$index != 0">{{ day.date.weekday }}</h4>
+		</div>
+		</li>
+		</ul>
+	</div>
 </div>
 	
 <script src="js/angular.min.js" type="text/javascript"></script>
 <script src="js/app.js" type="text/javascript"></script>
+<script src="js/services/providers/weather.js" type="text/javascript"></script>
 </body>
 </html>
